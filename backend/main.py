@@ -18,7 +18,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 # Run as `uvicorn main:app` from inside backend/, so `main` loads with no
-# parent package — put hw5/ on sys.path first so `backend.*` still resolves
+# parent package — put the project root on sys.path first so `backend.*` still resolves
 # the same way it does for backend/run.py and the agent code itself.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 

@@ -12,7 +12,7 @@ and `pending_actions` — on whichever database file it's pointed at, if they do
 so both the seed and working copies share the same schema without ever touching the original seed
 rows.
 
-This server is not run standalone for the assignment; it's launched as a subprocess per agent via
+This server is not usually run standalone; it's launched as a subprocess per agent via
 `backend/mcp_toolsets.py` (each agent only sees a role-appropriate subset of the tools below) and
 per direct call via `backend/mcp_client.py` (used by the FastAPI routes that aren't agent runs).
 

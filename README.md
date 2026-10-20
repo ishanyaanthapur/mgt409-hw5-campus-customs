@@ -1,6 +1,12 @@
-# Campus Customs — AI Shop Team
+# Multi-Agent Ticket Dashboard
 
-MGT 409 (AI Fundamentals), Homework 5. An AI team runs a simulated campus shop:
+A team of five AI agents runs the back office of a simulated campus shop (Campus Customs). They handle customer orders, rent, and bulk-pricing requests. The agents can look things up and propose actions, but no money moves until a person clicks Approve on a live, arcade-style dashboard.
+
+**[See the project write-up in my portfolio →](https://ishanya-anthapur.vercel.app/#tickets)**
+
+![Dashboard with an $840 vendor payment waiting for human approval](output/screenshots/ticket_101_awaiting_approval.png)
+
+## How it fits together
 
 - **Agents:** five PydanticAI agents (Boss, Inventory, Accounting, Facilities, Customer Service),
   all using `gpt-6-luna` through Portkey, handle orders, inventory, bills, rent, and customer
@@ -13,8 +19,8 @@ MGT 409 (AI Fundamentals), Homework 5. An AI team runs a simulated campus shop:
 ## Layout
 
 ```
-hw5/
-├── AI_prompts.md           # prompt log for Problems 2–10
+./
+├── AI_prompts.md           # log of the prompts used to build the project
 ├── requirements.txt        # Python dependencies
 ├── .env.example            # copy to .env and add your PORTKEY_API_KEY
 ├── .gitignore
@@ -39,7 +45,7 @@ hw5/
 │   └── prompts/            # boss.md, inventory.md, accounting.md, facilities.md, customer_service.md
 └── output/
     ├── harness.md          # tables, MCP tools, agents, API routes, dashboard, safety rules
-    ├── mcp_smoke.json      # Problem 4 MCP tool tests
+    ├── mcp_smoke.json      # MCP tool smoke tests
     ├── desk_tickets.html   # Expected vs. Actual per ticket, Cash, Reflection
     ├── design.md           # dashboard design notes
     ├── resolved_tickets.json
@@ -52,7 +58,7 @@ hw5/
 ## Setup (one time)
 
 You need Python 3.11+ (built and tested on 3.13), Node.js 20.19+ (tested on 24), and a Portkey
-API key. Run everything from inside `hw5/`.
+API key. Run everything from the project folder.
 
 1. Create the Python environment and install the dependencies:
 
@@ -66,7 +72,7 @@ API key. Run everything from inside `hw5/`.
 
 2. Add your key: copy `.env.example` to `.env` and replace the placeholder with your real
    `PORTKEY_API_KEY`. The backend uses the nearest `.env`, searching upward from `backend/`, so
-   `hw5/.env` works, and so does a shared `.env` in a parent folder.
+   `.env` works, and so does a shared `.env` in a parent folder.
 
    ```bash
    cp .env.example .env

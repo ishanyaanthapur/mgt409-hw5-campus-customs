@@ -17,7 +17,7 @@ from backend.audit import AuditLog
 from backend.mcp_toolsets import make_toolset
 from backend.models import AgentName, AuditEvent
 
-# Nearest .env walking up from backend/: hw5/.env if one exists, otherwise a shared one in a
+# Nearest .env walking up from backend/: .env if one exists, otherwise a shared one in a
 # parent folder (e.g. the course folder's .env).
 load_dotenv(find_dotenv())
 
@@ -26,7 +26,7 @@ PROMPTS_DIR = Path(__file__).resolve().parent / "prompts"
 
 
 def _build_model() -> OpenAIChatModel:
-    """gpt-6-luna through Portkey only — see AGENTS.md shop rules for this assignment."""
+    """gpt-6-luna through Portkey only — see AGENTS.md shop rules for this project."""
     key = os.environ["PORTKEY_API_KEY"]
     client = AsyncOpenAI(
         api_key=key,
